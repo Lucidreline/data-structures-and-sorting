@@ -1,12 +1,11 @@
 class driver {
   public static void main(String[] args) {
     singleLinkedList singly = new singleLinkedList();
-    singly.push(5);
-    singly.push(10);
-    singly.push(15);
-    singly.push(20);
-    singly.push(25);
-    singly.printList();
-    System.out.println(singly.head.value + " " + singly.tail.value);
+    for (int i = 5; i < 50; i += 5) {
+      singly.pushLast(i);
+    }
+    singly.pushToIndex(8, 3);
+    singly.pushToIndex(23, 10);
+    singly.printInfo();
   }
 }
