@@ -59,6 +59,43 @@ public class singleLinkedList {
     }
   }
 
+  public int getIndexValue(int _index) {
+    return this.getIndexNode(_index).value;
+  }
+
+  public Node getIndexNode(int _index) {
+    try {
+      Node target = this.head;
+      for (int i = 0; i < _index; i++) {
+        target = target.next;
+      }
+      return target;
+
+    } catch (NullPointerException err) {
+      return null;
+    }
+  }
+
+  public void removeIndex(int _index) {
+    Node target = this.head;
+    if (_index == 0 && this.length > 0) {
+      head = target.next;
+    } else {
+      target = this.getIndexNode(_index - 1);
+      if (target == null) {
+        System.out.println("Not able to remove index " + _index);
+        return;
+      } else if (_index == this.length - 1) {
+        target.next = null;
+        this.tail = target;
+      } else
+        target.next = target.next.next;
+
+      this.length--;
+
+    }
+  }
+
   public void printList() {
     Node target = head;
     int counter = 0;

@@ -6,6 +6,8 @@ class driver {
     }
     singly.pushToIndex(8, 3);
     singly.pushToIndex(23, 10);
+    singly.removeIndex(90);
     singly.printInfo();
+
   }
 }
